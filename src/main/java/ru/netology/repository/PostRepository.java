@@ -14,12 +14,10 @@ public interface PostRepository {
 
   public default List<Post> all() {
       return new ArrayList<>(posts.values());
-    //return Collections.emptyList();
   }
 
   public default Optional<Post> getById(long id) {
-    return Optional.ofNullable(posts.get(id)); // ofNullable - чтобы не выбрасывалось исключение
-   // return Optional.empty();
+    return Optional.ofNullable(posts.get(id));
   }
 
   public default Post save(Post post) {
