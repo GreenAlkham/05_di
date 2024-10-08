@@ -13,12 +13,10 @@ public class PostRepository {
 
   public List<Post> all() {
       return new ArrayList<>(posts.values());
-    //return Collections.emptyList();
   }
 
   public Optional<Post> getById(long id) {
-    return Optional.ofNullable(posts.get(id)); // ofNullable - чтобы не выбрасывалось исключение
-   // return Optional.empty();
+    return Optional.ofNullable(posts.get(id));
   }
 
   public Post save(Post post) {

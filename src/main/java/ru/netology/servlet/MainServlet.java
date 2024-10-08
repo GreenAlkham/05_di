@@ -3,13 +3,10 @@ package ru.netology.servlet;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import ru.netology.config.JavaConfig;
 import ru.netology.controller.PostController;
-import ru.netology.repository.PostRepository;
-import ru.netology.service.PostService;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.concurrent.atomic.AtomicLong;
 
 public class MainServlet extends HttpServlet {
   private PostController controller;
@@ -20,12 +17,6 @@ public class MainServlet extends HttpServlet {
 
     // получаем по имени бина
     final var controller = context.getBean("postController");
-
-//    // получаем по классу бина
-//    final var service = context.getBean(PostService.class);
-//
-//    // по умолчанию создаётся лишь один объект на BeanDefinition
-//    final var isSame = service == context.getBean("postService");
   }
 
   @Override
